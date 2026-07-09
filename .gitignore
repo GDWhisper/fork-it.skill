@@ -52,3 +52,6 @@ cache/
 .env.local
 anthropic_index/
 .claude/
+
+# WorkBuddy project memory (agent-internal scratch, not a deliverable)
+.workbuddy/
