@@ -1,6 +1,6 @@
 {
   "name": "@gdwhisper/fork-it",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Find it. Fork it. Make it yours. A universal AI skill that searches GitHub for a repo to fork as the starting point of your next project — installable into 9 mainstream AI coding agents with one command.",
   "type": "module",
   "bin": {
