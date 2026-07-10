@@ -1,22 +1,8 @@
 # fork-it
 
-## Find it. Fork it. Make it yours.
+## You don't have to start from scratch — search GitHub first.
 
 [简体中文](./README_zh.md)
-
----
-
-## Table of Contents
-
-- [Core Philosophy](#-core-philosophy)
-- [What is this?](#-what-is-this)
-- [Quick Start](#-quick-start)
-- [Usage](#-usage)
-- [How It Works](#-how-it-works)
-- [Tech Stack](#-tech-stack)
-- [Why fork-it?](#-why-fork-it)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
