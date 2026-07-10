@@ -56,19 +56,23 @@ fork-it is a **plain SKILL.md skill** — a standard Markdown definition plus sh
 The fastest way — no clone needed:
 
 ```bash
-# Run directly from npm (installs into every detected agent)
+# Run directly from npm
 npx @gdwhisper/fork-it
 
 # Or run straight from the GitHub repo
 npx github:GDWhisper/fork-it
 ```
 
-Both commands auto-detect every agent you have installed and drop `fork-it` into each one's `skills/` directory. Flags:
+By default the installer is **interactive**: it detects the agent config directories on your machine, shows them in a menu with their install status, and asks which ones to install into. Nothing is installed without your confirmation. Flags for non-interactive use:
 
 ```bash
-npx @gdwhisper/fork-it --all       # install into ALL known agent dirs (create if missing)
-npx @gdwhisper/fork-it --project   # install into the current project instead of your home dir
-npx @gdwhisper/fork-it --list      # just show which agents were detected
+npx @gdwhisper/fork-it                 # interactive: choose which agents to install
+npx @gdwhisper/fork-it --all           # install into ALL known agent dirs (create if missing)
+npx @gdwhisper/fork-it --agents a,b    # install into the named agents only (e.g. agents,claude)
+npx @gdwhisper/fork-it --yes           # install into detected agents only, no prompt
+npx @gdwhisper/fork-it --project       # install into the current project instead of your home dir
+npx @gdwhisper/fork-it --list          # just show which agents were detected
+npx @gdwhisper/fork-it --dry-run       # show what would be installed, change nothing
 ```
 
 Prefer a local clone? The repo ships a cross-platform installer (`install.mjs`) with thin `install.sh` / `install.ps1` wrappers:
@@ -77,6 +81,7 @@ Prefer a local clone? The repo ships a cross-platform installer (`install.mjs`) 
 # from a clone
 ./install.sh                 # or:  node install.mjs
 ./install.sh --all           # or:  node install.mjs --all
+./install.sh --agents a,b    # or:  node install.mjs --agents a,b
 ./install.sh --project       # or:  node install.mjs --project
 ./install.sh --list          # or:  node install.mjs --list
 ```

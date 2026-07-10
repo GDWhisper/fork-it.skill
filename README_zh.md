@@ -58,19 +58,23 @@ fork-it 是一个**纯 SKILL.md 技能**——标准 Markdown 定义 + 共享 No
 最快捷的方式——无需克隆仓库：
 
 ```bash
-# 直接从 npm 运行（自动装进每个已探测到的 agent）
+# 直接从 npm 运行
 npx @gdwhisper/fork-it
 
 # 或从 GitHub 仓库直接运行
 npx github:GDWhisper/fork-it
 ```
 
-两条命令都会自动探测你已安装的所有 agent，并把 `fork-it` 铺进每个 agent 的 `skills/` 目录。可用参数：
+默认是**交互式**：安装器会探测本机有哪些支持的 agent 配置目录，以菜单列出并标注安装状态，让你自己选择装到哪几个——未经你确认不会安装任何东西。非交互场景可用这些参数：
 
 ```bash
-npx @gdwhisper/fork-it --all       # 装进所有已知 agent 目录（不存在则创建）
-npx @gdwhisper/fork-it --project   # 装到当前项目而非 home 目录
-npx @gdwhisper/fork-it --list      # 仅查看探测到哪些 agent
+npx @gdwhisper/fork-it                 # 交互式：选择要装到哪些 agent
+npx @gdwhisper/fork-it --all           # 装进所有已知 agent 目录（不存在则创建）
+npx @gdwhisper/fork-it --agents a,b    # 只装指定的 agent（如 agents,claude）
+npx @gdwhisper/fork-it --yes           # 只装已探测到的 agent，不弹选择
+npx @gdwhisper/fork-it --project       # 装到当前项目而非 home 目录
+npx @gdwhisper/fork-it --list          # 仅查看探测到哪些 agent
+npx @gdwhisper/fork-it --dry-run       # 仅展示将要安装的内容，不做改动
 ```
 
 喜欢本地克隆？仓库自带跨平台安装器 `install.mjs`，并配了 `install.sh` / `install.ps1` 薄包装：
@@ -79,6 +83,7 @@ npx @gdwhisper/fork-it --list      # 仅查看探测到哪些 agent
 # 在克隆目录下
 ./install.sh                 # 或：node install.mjs
 ./install.sh --all           # 或：node install.mjs --all
+./install.sh --agents a,b    # 或：node install.mjs --agents a,b
 ./install.sh --project       # 或：node install.mjs --project
 ./install.sh --list          # 或：node install.mjs --list
 ```
